@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*----synchronous javascript
+        console.log("this is first line")
+        alert("hello")
+        console.log("this is third line")
+        ------*/
+
+
+        /*----example1  asynchronous javascript
+        setTimeout(function(){
+            console.log("this is first line")
+        },3000)
+        console.log("this is second line")
+        -----*/
+
+        /*----example2 asynchronous javascript
+        test() //this is second line
+        console.log("this is first line") //this is first line
+        function test()
+        {
+            console.log("this is second line")
+        }
+        -----*/
+
+        /*-----example3 asynchronous javascript
+        setTimeout(function(){
+            console.log("this is first line")
+        },0)
+        console.log("this is second line")
+        -----*/
+
+        /*---example4 asynchronous javascript
+        setTimeout(function(){
+            console.log("this is first line")
+        },1000)
+        console.log("this is second line")
+        console.log("this is third line")
+        console.log("this is fourth line")
+        console.log("this is fifth line")
+        -----*/
+
+        /*---example1 callback function 
+        function step1(next_task)
+        {
+            console.log("step1 done")
+            next_task()
+        }
+        function step2()
+        {
+            console.log("step2 done")
+        }
+        step1(step2)
+        ------*/
+
+        /*----example2 callback function
+        function step1()
+        {
+            setTimeout(()=>{
+                console.log("step1 done")
+            },2000)
+        }
+        function step2()
+        {
+            console.log("step2 done")
+        }
+        step1()
+        step2()
+        ------*/
+
+        /*----example3 callback function
+        function step1(next_task)
+        {
+            setTimeout(()=>{
+                console.log("step1 done")
+                next_task()
+            },2000)
+        }
+        function step2()
+        {
+            console.log("step2 done")
+        }
+        step1(step2)
+        -----*/
+
+        /*-----callback hell
+        function firstcallback()
+        {
+            setTimeout(()=>{
+                console.log("first callback hell")
+                setTimeout(()=>{
+                    console.log("second callback hell")
+                    setTimeout(()=>{
+                        console.log("thitd callback hell")
+                        setTimeout(()=>{
+                            console.log("fourth callback hell")
+                        },400)
+                    })
+                },1000)
+            },2000)
+        }
+        firstcallback()
+        ------*/
+
+        /*----promise then()
+        let p=new Promise(function(resolve,reject)
+        {
+            resolve("hello")
+        })
+        p.then(function(success){
+            console.log(success)
+        },function(error){
+            console.log(error)
+        })
+        -----*/
+
+        /*----promise() catch
+        let p=new Promise(function(resolve,reject){
+            reject("promise rejected")
+        })
+        p.then(function(success)
+        {
+            console.log(success)
+        })
+        p.catch(function(error){
+            console.log(error)
+        })
+        -------*/
+
+        /*----promise example
+        let p=new Promise(function(resolve,reject){
+            let x="hello"
+            let y="hello"
+            if(x===y)
+                resolve()
+            else
+                reject()
+        })
+        p.then(function(){
+            console.log("success ,goodmorning")
+        })
+        p.catch(function(){
+            console.log("some error has occurred")
+        })
+        -------*/
+
+
+        /*----fetch API example with url
+        let p=fetch('https://jsonplaceholder.typicode.com/users')
+        p.then(function(response){
+            response.json().then(function(countryinfo){
+                console.log(countryinfo)
+            })
+        })
+
+        p.catch(function(error){
+            console.log(error)
+        })
+        ------*/
+
+        /*----fetching locap api
+        let p=fetch("text.txt")
+        p.then(function(response){
+            response.text().then(function(countryinfo){
+                console.log(countryinfo)
+            })
+        })
+
+        p.catch(function(error){
+            console.log(error)
+        })
+        -----*/
+
+        /*----async example
+        async function test()
+        {
+            x=5+7
+            return x
+        }
+        let res=test()
+        console.log(res)
+        -----*/
+
+        /*-----async example2
+        async function test()
+        {
+            x=5+7
+            return x   //f you dont give this you will get undefined
+        }
+        let res=test()
+        res.then(function(data){
+            console.log(data)
+        })
+        -----*/
+
+        /*----await example
+        async function test()
+        {
+            x=await 5+7
+            return x
+        }
+        let res=test()
+        res.then(function(data){
+            console.log(data)
+        })
+        ----*/
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
